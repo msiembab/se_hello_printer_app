@@ -3,7 +3,7 @@ from hello_world.formater import get_formatted
 from hello_world.formater import SUPPORTED, PLAIN
 from flask import request
 
-moje_imie = "Marek"
+MOJE_IMIE = "Natalia"
 msg = "Hello World!"
 
 
@@ -12,10 +12,10 @@ def index():
     output = request.args.get('output')
     if not output:
         output = PLAIN
-    return get_formatted(msg, moje_imie,
+
+    name = request.args.get('name')
+    if not name:
+        name = MOJE_IMIE
+
+    return get_formatted(msg, name,
                          output.lower())
-
-
-@app.route('/outputs')
-def supported_output():
-    return ", ".join(SUPPORTED)

@@ -8,4 +8,4 @@ lint:
 	flake8 hello_world test
 
 test:
-	echo "abcd"
+	PYTHONPATH=. py.test --verbose -s
