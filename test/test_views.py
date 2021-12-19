@@ -1,6 +1,7 @@
 import unittest
 from hello_world import app
 
+
 class FlaskrTestCase(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
